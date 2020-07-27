@@ -111,7 +111,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-// #define SERIAL_PORT_2 1
+//  #define SERIAL_PORT_2 -1
 
 /**
  * This setting determines the communication speed of the printer.
@@ -2051,7 +2051,11 @@
 //
 // FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, A1, etc.)
 //
-//#define FSMC_GRAPHICAL_TFT
+// #define FSMC_GRAPHICAL_TFT
+// #define LCD_RESET_PIN      PC4   // pin 33
+// #define LCD_BACKLIGHT_PIN  PB1  // pin 59
+// #define FSMC_CS_PIN        PD7   // pin 88 = FSMC_NE1
+// #define FSMC_RS_PIN        PD13  // pin 58 A16 Register. Only one address needed
 
 //=============================================================================
 //============================  Other Controllers  ============================
@@ -2060,7 +2064,7 @@
 //
 // ADS7843/XPT2046 ADC Touchscreen such as ILI9341 2.8
 //
-//#define TOUCH_BUTTONS
+// #define TOUCH_BUTTONS
 #if ENABLED(TOUCH_BUTTONS)
   #define XPT2046_X_CALIBRATION   12316
   #define XPT2046_Y_CALIBRATION  -8981
