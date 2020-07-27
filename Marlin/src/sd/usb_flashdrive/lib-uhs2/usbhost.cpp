@@ -16,7 +16,7 @@
  *   GNU General Public License for more details.                           *
  *                                                                          *
  *   To view a copy of the GNU General Public License, go to the following  *
- *   location: <http://www.gnu.org/licenses/>.                              *
+ *   location: <https://www.gnu.org/licenses/>.                              *
  ****************************************************************************/
 
 /* What follows is a modified version of the MAX3421e originally defined in
@@ -194,7 +194,7 @@ void MAX3421e::busprobe() {
 }
 
 // MAX3421 state change task and interrupt handler
-uint8_t MAX3421e::Task(void) {
+uint8_t MAX3421e::Task() {
   return READ(USB_INTR_PIN) ? 0 : IntHandler();
 }
 

@@ -20,11 +20,11 @@ Contact information
 -------------------
 
 Circuits At Home, LTD
-Web      :  http://www.circuitsathome.com
+Web      :  https://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 
-#if !defined(__UHS_BULK_STORAGE_H__)
+#ifndef __UHS_BULK_STORAGE_H__
 #define __UHS_BULK_STORAGE_H__
 
 
@@ -98,7 +98,7 @@ struct UHS_BULK_CommandBlockWrapperBase {
         volatile uint8_t bmCBWFlags;
 public:
 
-        UHS_BULK_CommandBlockWrapperBase(void) {
+        UHS_BULK_CommandBlockWrapperBase() {
         }
 
         UHS_BULK_CommandBlockWrapperBase(uint32_t tag, uint32_t xflen, uint8_t flgs) :
@@ -174,18 +174,18 @@ protected:
         volatile uint16_t CurrentSectorSize[MASS_MAX_SUPPORTED_LUN]; // Sector size, clipped to 16 bits
         volatile bool LUNOk[MASS_MAX_SUPPORTED_LUN]; // use this to check for media changes.
         volatile bool WriteOk[MASS_MAX_SUPPORTED_LUN];
-        void PrintEndpointDescriptor(const USB_ENDPOINT_DESCRIPTOR* ep_ptr);
+        void PrintEndpointDescriptor(const USB_FD_ENDPOINT_DESCRIPTOR* ep_ptr);
 
 public:
         UHS_Bulk_Storage(UHS_USB_HOST_BASE *p);
 
         volatile UHS_EpInfo epInfo[MASS_MAX_ENDPOINTS];
 
-        uint8_t GetbMaxLUN(void) {
+        uint8_t GetbMaxLUN() {
                 return bMaxLUN; // Max LUN
         }
 
-        uint8_t GetbTheLUN(void) {
+        uint8_t GetbTheLUN() {
                 return bTheLUN; // Active LUN
         }
 
@@ -203,23 +203,23 @@ public:
 
 
         // Configure and internal methods, these should never be called by a user's sketch.
-        uint8_t Start(void);
+        uint8_t Start();
         bool OKtoEnumerate(ENUMERATION_INFO *ei);
         uint8_t SetInterface(ENUMERATION_INFO *ei);
 
-        uint8_t GetAddress(void) {
+        uint8_t GetAddress() {
                 return bAddress;
         };
 
 
-        void Poll(void);
+        void Poll();
 
-        void DriverDefaults(void);
+        void DriverDefaults();
 
 
 private:
-        void Reset(void);
-        void CheckMedia(void);
+        void Reset();
+        void CheckMedia();
 
         bool IsValidCBW(uint8_t size, uint8_t *pcbw);
         bool IsMeaningfulCBW(uint8_t size, uint8_t *pcbw);

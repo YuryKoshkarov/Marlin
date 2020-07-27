@@ -19,7 +19,7 @@
  * -------------------
  *
  * Circuits At Home, LTD
- * Web      :  http://www.circuitsathome.com
+ * Web      :  https://www.circuitsathome.com
  * e-mail   :  support@circuitsathome.com
  */
 #pragma once
@@ -43,10 +43,10 @@ void E_Notifyc(char c, int lvl);
   void NotifyFailSetDevTblEntry(uint8_t reason);
   void NotifyFailGetConfDescr(uint8_t reason);
   void NotifyFailSetConfDescr(uint8_t reason);
-  void NotifyFailGetDevDescr(void);
-  void NotifyFailSetDevTblEntry(void);
-  void NotifyFailGetConfDescr(void);
-  void NotifyFailSetConfDescr(void);
+  void NotifyFailGetDevDescr();
+  void NotifyFailSetDevTblEntry();
+  void NotifyFailGetConfDescr();
+  void NotifyFailSetConfDescr();
   void NotifyFailUnknownDevice(uint16_t VID, uint16_t PID);
   void NotifyFail(uint8_t rcode);
 #else

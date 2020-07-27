@@ -20,7 +20,7 @@ Contact information
 -------------------
 
 Circuits At Home, LTD
-Web      :  http://www.circuitsathome.com
+Web      :  https://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 
@@ -74,19 +74,19 @@ void E_Notify(double d, int lvl) {
 
 #ifdef DEBUG_USB_HOST
 
-void NotifyFailGetDevDescr(void) {
+void NotifyFailGetDevDescr() {
         Notify(PSTR("\r\ngetDevDescr "), 0x80);
 }
 
-void NotifyFailSetDevTblEntry(void) {
+void NotifyFailSetDevTblEntry() {
         Notify(PSTR("\r\nsetDevTblEn "), 0x80);
 }
 
-void NotifyFailGetConfDescr(void) {
+void NotifyFailGetConfDescr() {
         Notify(PSTR("\r\ngetConf "), 0x80);
 }
 
-void NotifyFailSetConfDescr(void) {
+void NotifyFailSetConfDescr() {
         Notify(PSTR("\r\nsetConf "), 0x80);
 }
 

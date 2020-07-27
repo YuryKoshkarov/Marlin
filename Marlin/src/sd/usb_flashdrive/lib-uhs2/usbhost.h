@@ -16,7 +16,7 @@
  *   GNU General Public License for more details.                           *
  *                                                                          *
  *   To view a copy of the GNU General Public License, go to the following  *
- *   location: <http://www.gnu.org/licenses/>.                              *
+ *   location: <https://www.gnu.org/licenses/>.                              *
  ****************************************************************************/
 
 #pragma once
@@ -44,7 +44,7 @@ class MAX3421e {
     uint8_t   gpioRd();
     bool      reset();
 
-    uint8_t   getVbusState(void)   {return vbusState;};
+    uint8_t   getVbusState()   {return vbusState;};
 
     void busprobe();
 

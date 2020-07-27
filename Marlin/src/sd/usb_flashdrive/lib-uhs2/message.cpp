@@ -19,7 +19,7 @@
  * -------------------
  *
  * Circuits At Home, LTD
- * Web      :  http://www.circuitsathome.com
+ * Web      :  https://www.circuitsathome.com
  * e-mail   :  support@circuitsathome.com
  */
 
@@ -37,7 +37,7 @@ int UsbDEBUGlvl = 0x80;
 void E_Notifyc(char c, int lvl) {
   if (UsbDEBUGlvl < lvl) return;
   USB_HOST_SERIAL.print(c
-    #if !defined(ARDUINO) || ARDUINO < 100
+    #if !defined(ARDUINO) && !defined(ARDUINO_ARCH_LPC176X)
       , BYTE
     #endif
   );
@@ -74,19 +74,19 @@ void E_Notify(double d, int lvl) {
 
 #ifdef DEBUG_USB_HOST
 
-  void NotifyFailGetDevDescr(void) {
+  void NotifyFailGetDevDescr() {
     Notify(PSTR("\r\ngetDevDescr "), 0x80);
   }
 
-  void NotifyFailSetDevTblEntry(void) {
+  void NotifyFailSetDevTblEntry() {
     Notify(PSTR("\r\nsetDevTblEn "), 0x80);
   }
 
-  void NotifyFailGetConfDescr(void) {
+  void NotifyFailGetConfDescr() {
     Notify(PSTR("\r\ngetConf "), 0x80);
   }
 
-  void NotifyFailSetConfDescr(void) {
+  void NotifyFailSetConfDescr() {
     Notify(PSTR("\r\nsetConf "), 0x80);
   }
 

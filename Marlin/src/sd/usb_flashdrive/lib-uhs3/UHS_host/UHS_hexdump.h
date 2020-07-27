@@ -20,7 +20,7 @@ Contact information
 -------------------
 
 Circuits At Home, LTD
-Web      :  http://www.circuitsathome.com
+Web      :  https://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
 #if !defined(_usb_h_) || defined(__HEXDUMP_H__)
@@ -40,7 +40,7 @@ public:
         HexDumper() : byteCount(0), byteTotal(0) {
         };
 
-        void Initialize(void) {
+        void Initialize() {
                 byteCount = 0;
                 byteTotal = 0;
         };
